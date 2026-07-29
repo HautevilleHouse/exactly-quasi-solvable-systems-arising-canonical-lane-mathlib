@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean.HarmonicOscillatorAlgebra
+import ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean.QuasiExactSolvabilityCondition
+import ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean.DifferentialOperatorRepresentation
+import ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean.SpectrumGeneratingAlgebra
+
+namespace HautevilleHouse
+namespace ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean
+
+def ConstrainedExactlyQuasiSolvableClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_exactly_quasi_solvable_endgame (A : AdmissibleClass) :
+    ConstrainedExactlyQuasiSolvableClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ExactlyQuasiSolvableSystemsArisingCanonicalLaneLean
+end HautevilleHouse
